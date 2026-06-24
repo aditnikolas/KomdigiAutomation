@@ -67,7 +67,7 @@ The automation reduces repetitive manual work and helps improve consistency, pro
 
 ## Workflow
 
-![Workflow](screenshoots\Nproject_Workflow2.png)
+![Workflow](screenshoots/Nproject_Workflow2.png)
 
 ```mermaid
 flowchart TD
