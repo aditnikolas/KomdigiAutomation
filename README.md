@@ -70,64 +70,40 @@ The automation reduces repetitive manual work and helps improve consistency, pro
 ![Workflow](screenshots/Nproject_Workflow2.png)
 ---
 
-## System Overview
-
-```text
-Input Files
-   │
-   ├── Drive Test Logfile
-   ├── Bulk XLSM
-   └── Generated Bulk XLSM
-        │
-        ▼
-N.Project Processing Pipeline
-        │
-        ├── File Extraction
-        ├── SQLite Temporary Database
-        ├── Data Validation
-        ├── Report Generation
-        ├── CSV Export
-        └── Map Plot Integration
-        │
-        ▼
-Final Outputs
-   ├── Compile Summary
-   ├── QoS Raw Reports
-   ├── Komdigi Raw Reports
-   └── Map Plot Images
-```
-
 ---
 
 ## Screenshots
 
 ### UI Dashboard
 
-![UI Dashboard](screenshots/01-ui-dashboard.png)
+![UI Dashboard](screenshots/Nproject_Workflow2.png)
 
 ---
 
 ### Processing Log
 
-![Processing Log](screenshots/02-process-log.png)
+![Processing Log](screenshots/Bulk.png)
+![Processing Log](screenshots/CSum.png)
+![Processing Log](screenshots/QRaw.png)
+![Processing Log](screenshots/MPlot.png)
 
 ---
 
 ### Output Folder
 
-![Output Folder](screenshots/03-output-folder.png)
+![Output Folder](screenshots/Output_Folder.png)
 
 ---
 
-### Generated Excel Report
+### Compile Summary Excel Report
 
-![Generated Report](screenshots/04-report-output.png)
+![Generated Report](screenshots/CSum_Report.png)
 
 ---
 
 ### Map Plot Output
 
-![Map Plot](screenshots/05-map-plot-result.png)
+![Map Plot](screenshots/MPlot_Report.png)
 
 ---
 
@@ -140,26 +116,24 @@ Production source code, internal templates, sensitive business rules, and real m
 Example simplified pipeline concept:
 
 ```python
-class DriveTestPipeline:
-    def run(self, target_folder):
-        self.prepare_workspace(target_folder)
-        self.extract_measurement_files()
-        self.build_temporary_database()
-        self.validate_and_transform_data()
-        self.generate_excel_reports()
-        self.export_mapplot_csv()
-        self.cleanup_temporary_files()
+class ProjectInit:
+    def start_N(csum, qraw, qraw_event, mplot, zip, map_to_zip, merge_map_plot):
+        self.select_folder()
+        self.extract_from_mf()
+        self.extract_from_bulk_files()
+        self.process_csum()
+        self.process_qraw()
+        self.process_mplot()
+        self.zipping_file()
 ```
 
 ---
 
 ## Repository Scope
-
 Included in this portfolio repository:
 
 * Project overview
 * Workflow documentation
-* System architecture explanation
 * UI and output screenshots
 * Simplified code preview
 * Dummy or anonymized sample outputs
