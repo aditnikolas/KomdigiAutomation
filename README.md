@@ -67,33 +67,7 @@ The automation reduces repetitive manual work and helps improve consistency, pro
 
 ## Workflow
 
-![Workflow](screenshoots/Nproject_Workflow2.png)
-
-```mermaid
-flowchart TD
-    A[Drive Test Logfile] --> D[Input Preparation]
-    B[Bulk XLSM from Measurement Tool] --> D
-    C[Individual XLSM] --> D
-
-    D --> E[Batch Extraction]
-    E --> F[Temporary SQLite Database]
-    F --> G[Data Parsing and Validation]
-    G --> H[Data Transformation]
-
-    H --> I[Komdigi Raw Report]
-    H --> J[QoS Raw per Operator]
-    H --> K[Compile Summary]
-    H --> L[CSV Export for Map Plot]
-
-    L --> M[ArcGIS / ArcPy Processing]
-    M --> N[Map Plot Output]
-
-    I --> O[Final Output Folder]
-    J --> O
-    K --> O
-    N --> O
-```
-
+![Workflow](screenshots/Nproject_Workflow2.png)
 ---
 
 ## System Overview
